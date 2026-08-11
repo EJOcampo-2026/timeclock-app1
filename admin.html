@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Timecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="RGMTSI logo" class="brand-logo" width="190" height="39">
+      <div class="brand-text">
+        <h1>Timecard</h1>
+        <p class="tagline">Admin — all employee logs</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span class="user-chip" id="userChip" hidden>
+        <span class="user-dot"></span>
+        <span id="userChipName"></span>
+      </span>
+      <a href="index.html" class="btn btn-ghost">My timecard</a>
+      <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <section class="stats" id="statsRow">
+      <div class="stat-card">
+        <span class="stat-label">Currently clocked in</span>
+        <span class="stat-value" id="statActive">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Entries shown</span>
+        <span class="stat-value" id="statEntries">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Total hours (shown)</span>
+        <span class="stat-value" id="statHours">0h</span>
+      </div>
+    </section>
+
+    <section class="toolbar filters">
+      <select id="employeeFilter">
+        <option value="">All employees</option>
+      </select>
+      <input type="date" id="dateFrom">
+      <span class="filter-sep">to</span>
+      <input type="date" id="dateTo">
+      <button class="btn btn-ghost" id="applyFilters">Filter</button>
+      <button class="btn btn-ghost" id="clearFilters">Clear</button>
+      <button class="btn btn-ghost" id="refreshBtn">↻ Refresh</button>
+      <button class="btn btn-primary" id="exportBtn">⬇ Export CSV</button>
+    </section>
+
+    <section class="table-wrap">
+      <table id="logsTable">
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Date</th>
+            <th>Time in</th>
+            <th>Time out</th>
+            <th>Duration</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="logsBody"></tbody>
+      </table>
+      <p class="empty-state" id="emptyState" hidden>No time logs match these filters.</p>
+    </section>
+
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

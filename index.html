@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.png" alt="RGMTSI logo" class="brand-logo" width="190" height="39">
+      <div class="brand-text">
+        <h1>Timecard</h1>
+        <p class="tagline">Employee time clock</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span class="user-chip" id="userChip" hidden>
+        <span class="user-dot" id="userDot"></span>
+        <span id="userChipName"></span>
+      </span>
+      <a href="admin.html" class="btn btn-ghost" id="adminLink" hidden>Admin view</a>
+      <button class="btn btn-ghost" id="logoutBtn">Log out</button>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <section class="clock-card">
+      <p class="clock-status" id="clockStatus">Checking status…</p>
+      <p class="clock-time" id="liveClock">--:--:--</p>
+      <p class="clock-since" id="clockSince"></p>
+      <button class="btn btn-clock" id="clockBtn" disabled>—</button>
+    </section>
+
+    <section class="table-wrap">
+      <div class="table-head-row">
+        <h2>Your recent activity</h2>
+      </div>
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time in</th>
+            <th>Time out</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+      <p class="empty-state" id="emptyState" hidden>No time logs yet. Clock in to get started.</p>
+    </section>
+
+  </main>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>

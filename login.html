@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Timecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-card">
+  <div class="brand auth-brand">
+    <img src="assets/logo.png" alt="RGMTSI logo" class="brand-logo" width="220" height="45">
+    <p class="product-tag">Timecard — Employee time clock</p>
+  </div>
+
+  <h2 class="auth-heading">Log in</h2>
+
+  <form id="loginForm">
+    <label>
+      Username or email
+      <input type="text" id="loginUsername" required autocomplete="username">
+    </label>
+    <label>
+      Password
+      <input type="password" id="loginPassword" required autocomplete="current-password">
+    </label>
+
+    <p class="auth-error" id="loginError" hidden></p>
+
+    <button type="submit" class="btn btn-primary auth-submit" id="loginSubmit">Log in</button>
+  </form>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
